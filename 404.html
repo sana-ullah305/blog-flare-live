@@ -3,11 +3,11 @@
 <head>
     <script>
         var basePath = "/blog-flare-live";
-        var currentPath = window.location.pathname;
-
-        // Prevent infinite loop by checking if the path already starts with the basePath
+        var currentPath = window.location.pathname + window.location.search;
         if (!currentPath.startsWith(basePath)) {
             window.location.replace(basePath + currentPath);
+        } else {
+            window.location.replace(basePath + "/");
         }
     </script>
 </head>
