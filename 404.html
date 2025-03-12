@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <script>
-        var pathname = window.location.pathname;
-        var search = window.location.search;
-        var hash = window.location.hash;
-        var redirectTo = "/blog-flare-live" + pathname + search + hash;
+        // Ensure we are not stuck in a loop
+        if (!window.location.pathname.startsWith("/blog-flare-live")) {
+            var pathname = window.location.pathname;
+            var search = window.location.search;
+            var hash = window.location.hash;
+            var redirectTo = "/blog-flare-live" + pathname + search + hash;
 
-        // Ensure it doesn't create an infinite loop
-        if (window.location.pathname !== "/blog-flare-live/") {
+            // Redirect only if needed
             window.location.replace(redirectTo);
         }
     </script>
