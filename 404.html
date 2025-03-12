@@ -1,14 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta http-equiv="refresh" content="0; url=/blog-flare-live/" />
     <script>
-        var basePath = "/blog-flare-live";
-        var currentPath = window.location.pathname + window.location.search;
-        if (!currentPath.startsWith(basePath)) {
-            window.location.replace(basePath + currentPath);
-        } else {
-            window.location.replace(basePath + "/");
-        }
+        window.location.replace("/blog-flare-live/" + window.location.pathname.substring(1) + window.location.search);
     </script>
 </head>
 <body>
