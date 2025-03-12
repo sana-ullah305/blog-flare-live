@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; url=/blog-flare-live/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
     <script>
-        window.location.replace("/blog-flare-live/" + window.location.pathname.substring(1) + window.location.search);
+        var pathname = window.location.pathname;
+        var search = window.location.search;
+        var hash = window.location.hash;
+        var redirectTo = "/blog-flare-live" + pathname + search + hash;
+
+        // Ensure it doesn't create an infinite loop
+        if (window.location.pathname !== "/blog-flare-live/") {
+            window.location.replace(redirectTo);
+        }
     </script>
 </head>
 <body>
