@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="0; url=/blog-flare-live/" />
+    <script>
+        var basePath = "/blog-flare-live";
+        var currentPath = window.location.pathname;
+
+        // Prevent infinite loop by checking if the path already starts with the basePath
+        if (!currentPath.startsWith(basePath)) {
+            window.location.replace(basePath + currentPath);
+        }
+    </script>
 </head>
 <body>
-    <script>
-      window.location.replace("/blog-flare-live/" + window.location.pathname.substring(1));
-    </script>
+    Redirecting...
 </body>
 </html>
